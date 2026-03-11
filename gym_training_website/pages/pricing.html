@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing – FitCore Gym</title>
+  <meta name="description" content="Choose a FitCore membership plan that matches your fitness journey.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/pricing.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <h1>FitCore</h1>
+    <nav class="nav-links">
+      <div class="nav-item has-dropdown">
+        <a href="index.html" class="nav-parent">Home</a>
+        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        <div class="dropdown">
+          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="home.html"><i class="fa-solid fa-layer-group"></i> Home Alt</a>
+        </div>
+      </div>
+      <a href="aboutus.html">About</a>
+      <div class="nav-item has-dropdown">
+        <a href="services.html" class="nav-parent">Services</a>
+        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        <div class="dropdown">
+          <a href="service-personal-training.html"><i class="fa-solid fa-user"></i> Personal Training</a>
+          <a href="service-strength-training.html"><i class="fa-solid fa-dumbbell"></i> Strength Training</a>
+          <a href="service-hiit.html"><i class="fa-solid fa-bolt"></i> HIIT Sessions</a>
+          <a href="service-nutrition.html"><i class="fa-solid fa-apple-whole"></i> Nutrition Coaching</a>
+        </div>
+      </div>
+      <div class="nav-item has-dropdown">
+        <a href="blog.html" class="nav-parent">Blog</a>
+        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        <div class="dropdown dropdown-wide">
+          <a href="blog-article.html"><i class="fa-solid fa-newspaper"></i> How to Build Muscle the Smart Way</a>
+          <a href="blog-article-fat-loss.html"><i class="fa-solid fa-fire"></i> Smart Fat Loss Without Losing Muscle</a>
+          <a href="blog-article-hiit-cardio.html"><i class="fa-solid fa-stopwatch"></i> HIIT vs Traditional Cardio</a>
+          <a href="blog-article-consistency.html"><i class="fa-solid fa-brain"></i> The Psychology of Gym Consistency</a>
+          <a href="blog-article-personal-training.html"><i class="fa-solid fa-trophy"></i> Why Personal Training Accelerates Results</a>
+        </div>
+      </div>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="theme-toggle">🌙</button>
+      <a href="signup.html" class="btn-signup">Sign Up</a>
+    </div>
+  </div>
+    <div id="mobile-menu">
+    <div class="mob-item">
+      <a href="#" class="mob-parent">Home <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
+      <div class="mob-sub">
+        <a href="index.html">Home (Main)</a>
+        <a href="home.html">Home2</a>
+      </div>
+    </div>
+    <a href="aboutus.html">About</a>
+    <div class="mob-item">
+      <a href="#" class="mob-parent">Services <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
+      <div class="mob-sub">
+        <a href="services.html">All Services</a>
+        <a href="service-personal-training.html">Personal Training</a>
+        <a href="service-strength-training.html">Strength Training</a>
+        <a href="service-hiit.html">HIIT Sessions</a>
+        <a href="service-nutrition.html">Nutrition Coaching</a>
+      </div>
+    </div>
+    <div class="mob-item">
+      <a href="#" class="mob-parent">Blog <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
+      <div class="mob-sub">
+        <a href="blog.html">All Articles</a>
+        <a href="blog-article.html">Build Muscle the Smart Way</a>
+        <a href="blog-article-fat-loss.html">Smart Fat Loss</a>
+        <a href="blog-article-hiit-cardio.html">HIIT vs Cardio</a>
+        <a href="blog-article-consistency.html">Psychology of Consistency</a>
+        <a href="blog-article-personal-training.html">Personal Training Results</a>
+      </div>
+    </div>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+
+<section class="pricing-hero">
+  <div class="container">
+    <span class="pricing-label">Membership Plans</span>
+    <h1>Simple,<br>Transparent<br><em>Pricing</em></h1>
+    <p>No hidden fees. No lock-in surprises. Just the plan that fits your goals.</p>
+  </div>
+</section>
+
+
+<div class="billing-toggle-wrap">
+  <div class="container">
+    <div class="billing-toggle">
+      <span class="bill-opt active" id="bill-monthly" onclick="setBilling('monthly')">Monthly</span>
+      <div class="toggle-track" onclick="toggleBilling()">
+        <div class="toggle-thumb" id="toggle-thumb"></div>
+      </div>
+      <span class="bill-opt" id="bill-annual" onclick="setBilling('annual')">Annual <span class="save-badge">Save 20%</span></span>
+    </div>
+  </div>
+</div>
+
+
+<section class="pricing-section">
+  <div class="container">
+    <div class="pricing-grid">
+
+      
+      <article class="pricing-card">
+        <div class="card-top">
+          <div class="plan-icon"><i class="fa-solid fa-seedling"></i></div>
+          <div class="plan-meta">
+            <span class="plan-name">Basic</span>
+            <p class="plan-desc">Perfect for beginners getting started on their fitness journey.</p>
+          </div>
+        </div>
+        <div class="plan-price">
+          <span class="price-amount" data-monthly="999" data-annual="799">₹999</span>
+          <span class="price-period">/month</span>
+        </div>
+        <div class="plan-annual-note" id="note-basic" style="display:none;">Billed as ₹9,588/year</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><i class="fa-solid fa-check"></i> Full gym access (6am – 10pm)</li>
+          <li><i class="fa-solid fa-check"></i> Locker & shower facility</li>
+          <li><i class="fa-solid fa-check"></i> 1 trainer orientation session</li>
+          <li><i class="fa-solid fa-check"></i> Standard equipment access</li>
+          <li><i class="fa-solid fa-check"></i> Group fitness classes (2/week)</li>
+          <li class="muted"><i class="fa-solid fa-xmark"></i> Personal training sessions</li>
+          <li class="muted"><i class="fa-solid fa-xmark"></i> Nutrition coaching</li>
+          <li class="muted"><i class="fa-solid fa-xmark"></i> Coaching dashboard access</li>
+        </ul>
+        <a href="contact.html" class="plan-btn outline">Get Started</a>
+      </article>
+
+      
+      <article class="pricing-card featured">
+        <div class="popular-badge">Most Popular</div>
+        <div class="card-top">
+          <div class="plan-icon accent"><i class="fa-solid fa-fire"></i></div>
+          <div class="plan-meta">
+            <span class="plan-name">Standard</span>
+            <p class="plan-desc">The most popular choice — serious training with expert guidance.</p>
+          </div>
+        </div>
+        <div class="plan-price">
+          <span class="price-amount" data-monthly="1999" data-annual="1599">₹1,999</span>
+          <span class="price-period">/month</span>
+        </div>
+        <div class="plan-annual-note" id="note-standard" style="display:none;">Billed as ₹19,188/year</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><i class="fa-solid fa-check"></i> Everything in Basic</li>
+          <li><i class="fa-solid fa-check"></i> 8 personal trainer sessions/month</li>
+          <li><i class="fa-solid fa-check"></i> Custom diet & nutrition plan</li>
+          <li><i class="fa-solid fa-check"></i> Unlimited group classes</li>
+          <li><i class="fa-solid fa-check"></i> Body composition tracking</li>
+          <li><i class="fa-solid fa-check"></i> Coaching dashboard access</li>
+          <li><i class="fa-solid fa-check"></i> Monthly progress review</li>
+          <li class="muted"><i class="fa-solid fa-xmark"></i> 24/7 gym access</li>
+        </ul>
+        <a href="contact.html" class="plan-btn filled">Get Started</a>
+      </article>
+
+      
+      <article class="pricing-card">
+        <div class="card-top">
+          <div class="plan-icon"><i class="fa-solid fa-crown"></i></div>
+          <div class="plan-meta">
+            <span class="plan-name">Premium</span>
+            <p class="plan-desc">Unlimited everything — for those who train without compromise.</p>
+          </div>
+        </div>
+        <div class="plan-price">
+          <span class="price-amount" data-monthly="3499" data-annual="2799">₹3,499</span>
+          <span class="price-period">/month</span>
+        </div>
+        <div class="plan-annual-note" id="note-premium" style="display:none;">Billed as ₹33,588/year</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><i class="fa-solid fa-check"></i> Everything in Standard</li>
+          <li><i class="fa-solid fa-check"></i> 24/7 gym access</li>
+          <li><i class="fa-solid fa-check"></i> Unlimited PT sessions</li>
+          <li><i class="fa-solid fa-check"></i> Advanced equipment priority</li>
+          <li><i class="fa-solid fa-check"></i> Weekly nutrition check-ins</li>
+          <li><i class="fa-solid fa-check"></i> Supplement guidance</li>
+          <li><i class="fa-solid fa-check"></i> Priority coach messaging</li>
+          <li><i class="fa-solid fa-check"></i> Guest passes (2/month)</li>
+        </ul>
+        <a href="contact.html" class="plan-btn outline">Get Started</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="compare-section">
+  <div class="container">
+    <h2 class="compare-title">Full Plan Comparison</h2>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Basic</th>
+            <th class="th-featured">Standard</th>
+            <th>Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Gym Access</td><td>6am–10pm</td><td class="td-featured">6am–10pm</td><td>24/7</td></tr>
+          <tr><td>Locker & Shower</td><td><i class="fa-solid fa-check yes"></i></td><td class="td-featured"><i class="fa-solid fa-check yes"></i></td><td><i class="fa-solid fa-check yes"></i></td></tr>
+          <tr><td>Group Classes</td><td>2/week</td><td class="td-featured">Unlimited</td><td>Unlimited</td></tr>
+          <tr><td>Personal Training</td><td>1 session</td><td class="td-featured">8/month</td><td>Unlimited</td></tr>
+          <tr><td>Nutrition Plan</td><td><i class="fa-solid fa-xmark no"></i></td><td class="td-featured"><i class="fa-solid fa-check yes"></i></td><td><i class="fa-solid fa-check yes"></i></td></tr>
+          <tr><td>Coaching Dashboard</td><td><i class="fa-solid fa-xmark no"></i></td><td class="td-featured"><i class="fa-solid fa-check yes"></i></td><td><i class="fa-solid fa-check yes"></i></td></tr>
+          <tr><td>Weekly Check-ins</td><td><i class="fa-solid fa-xmark no"></i></td><td class="td-featured"><i class="fa-solid fa-xmark no"></i></td><td><i class="fa-solid fa-check yes"></i></td></tr>
+          <tr><td>Guest Passes</td><td><i class="fa-solid fa-xmark no"></i></td><td class="td-featured"><i class="fa-solid fa-xmark no"></i></td><td>2/month</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<section class="pricing-faq">
+  <div class="container">
+    <h2 class="faq-title">Frequently Asked</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4><i class="fa-solid fa-circle-question"></i> Can I cancel anytime?</h4>
+        <p>Yes. All plans are month-to-month with no long-term lock-in. Cancel before your next billing date.</p>
+      </div>
+      <div class="faq-item">
+        <h4><i class="fa-solid fa-circle-question"></i> Is there a joining fee?</h4>
+        <p>No joining or registration fee. You only pay the monthly membership price.</p>
+      </div>
+      <div class="faq-item">
+        <h4><i class="fa-solid fa-circle-question"></i> Can I upgrade my plan?</h4>
+        <p>Absolutely. Upgrade anytime and pay the prorated difference for the remainder of your billing cycle.</p>
+      </div>
+      <div class="faq-item">
+        <h4><i class="fa-solid fa-circle-question"></i> What's in the coaching dashboard?</h4>
+        <p>Workout plans, meal logs, direct coach messaging, progress photos, and body metrics — all in one place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="pricing-cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h3>Not sure which plan?</h3>
+        <p>Book a free 30-minute consultation and we'll help you choose.</p>
+      </div>
+      <a href="contact.html" class="cta-btn">Book Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h3>FitCore</h3><p>Premium gym & fitness studio focused on strength, transformation, and peak performance.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Programs</h4><a href="service-personal-training.html">Personal Training</a><a href="service-strength-training.html">Strength Training</a><a href="service-hiit.html">HIIT Sessions</a><a href="service-nutrition.html">Nutrition Coaching</a></div>
+      <div class="footer-col"><h4>Newsletter</h4><p>Subscribe for fitness tips & offers.</p><form class="newsletter-form"><input type="email" placeholder="Your Email" required><button type="submit">Subscribe</button></form></div>
+    </div>
+    <div class="footer-container">
+      <div class="footer-line"></div>
+      <div class="footer-info"><span><i class="fa-solid fa-shield-halved"></i> Secure & Confidential</span><span><i class="fa-solid fa-clock"></i> 24/7 Support Available</span></div>
+      <div class="footer-line"></div>
+      <div class="footer-bottom"><p>© 2026 FitCore Gym. All rights reserved.</p><div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+  document.querySelectorAll('.has-dropdown .nav-chevron').forEach(function(c){c.addEventListener('click',function(e){e.stopPropagation();var i=c.closest('.has-dropdown'),o=i.classList.contains('open');document.querySelectorAll('.has-dropdown.open').forEach(function(el){el.classList.remove('open')});if(!o)i.classList.add('open')})});
+  document.addEventListener('click',function(e){if(!e.target.closest('.has-dropdown'))document.querySelectorAll('.has-dropdown.open').forEach(function(el){el.classList.remove('open')})});
+
+  var isAnnual = false;
+  function toggleBilling(){ isAnnual = !isAnnual; updatePrices(); }
+  function setBilling(type){ isAnnual = (type==='annual'); updatePrices(); }
+  function updatePrices(){
+    var thumb = document.getElementById('toggle-thumb');
+    var mOpt  = document.getElementById('bill-monthly');
+    var aOpt  = document.getElementById('bill-annual');
+    var notes = ['note-basic','note-standard','note-premium'];
+    thumb.style.transform = isAnnual ? 'translateX(26px)' : 'translateX(0)';
+    mOpt.classList.toggle('active', !isAnnual);
+    aOpt.classList.toggle('active', isAnnual);
+    document.querySelectorAll('.price-amount').forEach(function(el){
+      var v = isAnnual ? el.dataset.annual : el.dataset.monthly;
+      el.textContent = '₹' + parseInt(v).toLocaleString('en-IN');
+    });
+    notes.forEach(function(id){ document.getElementById(id).style.display = isAnnual ? 'block' : 'none'; });
+  }
+</script>
+</body>
+</html>
