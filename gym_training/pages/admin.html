@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin – FitCore Gym</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>if(localStorage.getItem('fitcore-theme') === 'dark') document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <aside class="sidebar">
+    <div class="profile">
+      <img src="../images/admin3.webp" alt="Admin">
+      <h3>Admin</h3>
+      <span>Gym Manager</span>
+    </div>
+    <div class="nav-link active" data-section="dashboard">Dashboard</div>
+    <div class="nav-link" data-section="members">Members</div>
+    <div class="nav-link" data-section="trainers">Trainers</div>
+    <div class="nav-link" data-section="programs">Programs</div>
+    <a href="index.html" class="logout">Logout</a>
+  </aside>
+
+  <main class="main">
+
+    <section id="dashboard" class="section active">
+      <div class="cards">
+        <div class="card">
+          <p>Monthly Revenue</p>
+          <h2>₹3,45,000</h2>
+        </div>
+        <div class="card">
+          <p>Today's Sessions</p>
+          <h2 class="danger">22</h2>
+        </div>
+        <div class="card">
+          <p>Active Members</p>
+          <h2>318</h2>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <div class="analytics">
+          <h3>Revenue Analytics</h3>
+          <canvas id="chart"></canvas>
+        </div>
+        <div class="schedule">
+          <h3>Today's Schedule</h3>
+          <div class="schedule-item">
+            <span>07:00 AM</span>
+            <p>Rahul – Personal Training</p>
+          </div>
+          <div class="schedule-item">
+            <span>09:30 AM</span>
+            <p>HIIT Group Session</p>
+          </div>
+          <div class="schedule-item">
+            <span>05:00 PM</span>
+            <p>Yoga – Neha</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="members" class="section">
+      <div class="table-card">
+        <h3>All Members</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Plan</th>
+              <th>Status</th>
+              <th>Joined</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Rahul Sharma</td><td>Premium</td><td><span class="badge active">Active</span></td><td>12 Feb 2026</td></tr>
+            <tr><td>Priya Reddy</td><td>Basic</td><td><span class="badge pending">Pending</span></td><td>01 Mar 2026</td></tr>
+            <tr><td>Vikram Singh</td><td>Gold</td><td><span class="badge expired">Expired</span></td><td>15 Jan 2026</td></tr>
+            <tr><td>Anjali Rao</td><td>Premium</td><td><span class="badge active">Active</span></td><td>18 Feb 2026</td></tr>
+            <tr><td>Karthik</td><td>Basic</td><td><span class="badge active">Active</span></td><td>22 Feb 2026</td></tr>
+            <tr><td>Megha</td><td>Gold</td><td><span class="badge pending">Pending</span></td><td>10 Mar 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="trainers" class="section">
+      <h3 class="section-title">Our Trainers</h3>
+      <div class="grid-3">
+        <div class="trainer-card">
+          <img src="../images/admin2.jpg" alt="Amit Verma">
+          <h4>Amit Verma</h4>
+          <p>Strength Coach</p>
+          <span class="trainer-badge">5 Years Experience</span>
+          <button>View Profile</button>
+        </div>
+        <div class="trainer-card">
+          <img src="../images/admin4.jpg" alt="Neha Kapoor">
+          <h4>Neha Kapoor</h4>
+          <p>Yoga Specialist</p>
+          <span class="trainer-badge">3 Years Experience</span>
+          <button>View Profile</button>
+        </div>
+        <div class="trainer-card">
+          <img src="../images/admin1.jpg" alt="Rohan Malhotra">
+          <h4>Rohan Malhotra</h4>
+          <p>CrossFit Coach</p>
+          <span class="trainer-badge">6 Years Experience</span>
+          <button>View Profile</button>
+        </div>
+        <div class="trainer-card">
+          <img src="../images/admin6.jpg" alt="Simran Kaur">
+          <h4>Simran Kaur</h4>
+          <p>Zumba Instructor</p>
+          <span class="trainer-badge">4 Years Experience</span>
+          <button>View Profile</button>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="programs" class="section">
+      <div class="grid-3">
+        <div class="program-card">
+          <h4>Weight Loss</h4>
+          <p>12 Weeks Program</p>
+          <p>₹8,000</p>
+        </div>
+        <div class="program-card">
+          <h4>Muscle Gain</h4>
+          <p>16 Weeks Program</p>
+          <p>₹12,000</p>
+        </div>
+        <div class="program-card">
+          <h4>Beginner Fitness</h4>
+          <p>8 Weeks Program</p>
+          <p>₹6,000</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
+
+
