@@ -27,33 +27,7 @@
   });
 
 
-  var mobileBtn  = document.getElementById('mobile-menu-btn');
-  var mobileMenu = document.getElementById('mobile-menu');
-
-  mobileBtn.addEventListener('click', function () {
-    var isOpen = mobileMenu.classList.toggle('open');
-    mobileBtn.setAttribute('aria-expanded', isOpen);
-  });
-
-  function closeAll() {
-    document.querySelectorAll('.has-dropdown.open').forEach(function (el) {
-      el.classList.remove('open');
-    });
-  }
-
-  document.querySelectorAll('.has-dropdown .nav-chevron').forEach(function (chevron) {
-    chevron.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var item   = chevron.closest('.has-dropdown');
-      var isOpen = item.classList.contains('open');
-      closeAll();
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.has-dropdown')) closeAll();
-  });
+  // Mobile menu is handled by main.js to avoid duplicate listeners
 
 
   var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');

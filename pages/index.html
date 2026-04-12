@@ -7,89 +7,84 @@
   <meta name="description" content="FitCore premium gym and fitness studio. Built for performance and discipline.">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/index.css">
-  <link rel="stylesheet" href="../assets/css/navbar.css">
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head><script>
+  (function(){
+    var d = localStorage.getItem('fitcore-dir');
+    if(d === 'rtl'){ document.documentElement.setAttribute('dir','rtl'); document.documentElement.setAttribute('lang','ar'); }
+  })();
+</script>
+<noscript><style>body { opacity: 1 !important; }</style></noscript>
 </head>
 <body>
-
 <header>
   <div class="container navbar">
+    
+    
     <h1 class="logo">FitCore</h1>
+
+    
     <nav class="nav-links">
       <div class="nav-item has-dropdown">
         <a href="index.html" class="nav-parent">Home</a>
-        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        <span class="nav-chevron">
+          <i class="fa-solid fa-chevron-down"></i>
+        </span>
         <div class="dropdown">
-          <a href="home.html"><i class="fa-solid fa-layer-group"></i> Home2</a>
+          <a href="home.html">
+            <i class="fa-solid fa-layer-group"></i> Home2
+          </a>
         </div>
       </div>
+
       <a href="aboutus.html">About</a>
-      <div class="nav-item has-dropdown">
-        <a href="services.html" class="nav-parent">Services</a>
-        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        <div class="dropdown">
-          <a href="service-personal-training.html"><i class="fa-solid fa-user"></i> Personal Training</a>
-          <a href="service-strength-training.html"><i class="fa-solid fa-dumbbell"></i> Strength Training</a>
-          <a href="service-hiit.html"><i class="fa-solid fa-bolt"></i> HIIT Sessions</a>
-          <a href="service-nutrition.html"><i class="fa-solid fa-apple-whole"></i> Nutrition Coaching</a>
-        </div>
-      </div>
-      <div class="nav-item has-dropdown">
-        <a href="blog.html" class="nav-parent">Blog</a>
-        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        <div class="dropdown dropdown-wide">
-          <a href="blog-article.html"><i class="fa-solid fa-newspaper"></i> How to Build Muscle the Smart Way</a>
-          <a href="blog-article-fat-loss.html"><i class="fa-solid fa-fire"></i> Smart Fat Loss Without Losing Muscle</a>
-          <a href="blog-article-hiit-cardio.html"><i class="fa-solid fa-stopwatch"></i> HIIT vs Traditional Cardio</a>
-          <a href="blog-article-consistency.html"><i class="fa-solid fa-brain"></i> The Psychology of Gym Consistency</a>
-          <a href="blog-article-personal-training.html"><i class="fa-solid fa-trophy"></i> Why Personal Training Accelerates Results</a>
-        </div>
-      </div>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
       <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
+      <a href="admin.html">Dashboard</a>
     </nav>
+
+    
     <div class="nav-actions">
       <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button id="rtl-toggle" aria-label="Switch to RTL" title="Switch to RTL">&#x2B62;</button>
       <a href="signup.html" class="btn-signup">Sign Up</a>
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
-        <span></span><span></span><span></span>
+
+      
+      <button class="mobile-menu-btn hamburger" id="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
+
   </div>
+
+  
   <div id="mobile-menu">
     <div class="mob-item">
-      <a href="#" class="mob-parent">Home <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
+      <a href="#" class="mob-parent">
+        Home <i class="fa-solid fa-chevron-down mob-chevron"></i>
+      </a>
       <div class="mob-sub">
         <a href="index.html">Home (Main)</a>
         <a href="home.html">Home2</a>
       </div>
     </div>
+
     <a href="aboutus.html">About</a>
-    <div class="mob-item">
-      <a href="#" class="mob-parent">Services <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
-      <div class="mob-sub">
-        <a href="services.html">All Services</a>
-        <a href="service-personal-training.html">Personal Training</a>
-        <a href="service-strength-training.html">Strength Training</a>
-        <a href="service-hiit.html">HIIT Sessions</a>
-        <a href="service-nutrition.html">Nutrition Coaching</a>
-      </div>
-    </div>
-    <div class="mob-item">
-      <a href="#" class="mob-parent">Blog <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
-      <div class="mob-sub">
-        <a href="blog.html">All Articles</a>
-        <a href="blog-article.html">Build Muscle the Smart Way</a>
-        <a href="blog-article-fat-loss.html">Smart Fat Loss</a>
-        <a href="blog-article-hiit-cardio.html">HIIT vs Cardio</a>
-        <a href="blog-article-consistency.html">Psychology of Consistency</a>
-        <a href="blog-article-personal-training.html">Personal Training Results</a>
-      </div>
-    </div>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
     <a href="pricing.html">Pricing</a>
     <a href="contact.html">Contact</a>
+    <a href="admin.html">Dashboard</a>
+
+    <div class="mob-signup-wrap">
+      <a href="signup.html" class="btn-signup">Sign Up</a>
+    </div>
   </div>
 </header>
 
@@ -295,21 +290,18 @@
         <h3>Assessment</h3>
         <p>We analyse your body composition, fitness level, and long-term goals before building your program.</p>
       </div>
-      <div class="step-arrow reveal rd1"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="step reveal rd2">
         <div class="step-num">02</div>
         <div class="step-icon">🎯</div>
         <h3>Custom Program</h3>
         <p>A periodised training and nutrition plan built specifically around your goals and schedule.</p>
       </div>
-      <div class="step-arrow reveal rd2"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="step reveal rd3">
         <div class="step-num">03</div>
         <div class="step-icon">💪</div>
         <h3>Train &amp; Track</h3>
         <p>Train with expert guidance while we monitor your progress with weekly performance benchmarks.</p>
       </div>
-      <div class="step-arrow reveal rd3"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="step reveal rd4">
         <div class="step-num">04</div>
         <div class="step-icon">🏆</div>

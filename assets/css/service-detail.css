@@ -385,4 +385,24 @@ blockquote {
 @media (max-width: 480px) {
   .hero-stats { gap: 24px; }
   .detail-hero { padding: 100px 0 48px; }
+ .detail-body h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 24px 0 10px; 
+  }
+.container {
+    padding: 0 16px; 
+  }
+  
+  .detail-body p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 14px; 
+  }
+
+  
+  .detail-body {
+    padding: 0 4px;
+  }
+
 }

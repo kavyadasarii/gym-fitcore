@@ -4,8 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const html        = document.documentElement;
   const themeToggle = document.getElementById('theme-toggle');
+  const rtlToggle   = document.getElementById('rtl-toggle');
   const saved       = localStorage.getItem('fitcore-theme');
+  const savedDir    = localStorage.getItem('fitcore-dir');
 
+  // Theme
   if (saved === 'dark') { html.classList.add('dark'); }
   if (themeToggle) {
     themeToggle.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
@@ -16,6 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
       themeToggle.textContent = isDark ? '☀️' : '🌙';
     });
   }
+
+  // RTL — applies dir="rtl" to <html> which flips the entire page layout
+  const applyDir = (rtl) => {
+    if (rtl) {
+      html.setAttribute('dir', 'rtl');
+      document.querySelectorAll('#rtl-toggle, #rtl-toggle-mob').forEach(btn => {
+        if (btn) btn.setAttribute('data-active', 'true');
+      });
+    } else {
+      html.removeAttribute('dir');
+      document.querySelectorAll('#rtl-toggle, #rtl-toggle-mob').forEach(btn => {
+        if (btn) btn.removeAttribute('data-active');
+      });
+    }
+  };
+  applyDir(savedDir === 'rtl');
+  document.querySelectorAll('#rtl-toggle, #rtl-toggle-mob').forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const isRtl = html.getAttribute('dir') === 'rtl';
+        applyDir(!isRtl);
+        localStorage.setItem('fitcore-dir', !isRtl ? 'rtl' : 'ltr');
+      });
+    }
+  });
 
   
   const closeTimers = {};
@@ -60,32 +88,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const mobileMenu = document.getElementById('mobile-menu');
-  const navbar     = document.querySelector('.navbar');
+  const btn = document.getElementById("mobile-menu-btn");
+const menu = document.getElementById("mobile-menu");
 
-  if (navbar && mobileMenu) {
-    const ham = document.createElement('button');
-    ham.className   = 'hamburger';
-    ham.setAttribute('aria-label', 'Toggle menu');
-    ham.innerHTML   = '<span></span><span></span><span></span>';
-    navbar.appendChild(ham);
-
-    ham.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      const open = mobileMenu.classList.contains('open');
-      ham.setAttribute('aria-expanded', open);
-      const spans = ham.querySelectorAll('span');
-      if (open) {
-        spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-        spans[1].style.opacity   = '0';
-        spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-      } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity   = '';
-        spans[2].style.transform = '';
-      }
-    });
-  }
+if (btn && menu) {
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("open");
+  });
+}
 
   
   const bar = document.getElementById('reading-progress');

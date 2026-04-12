@@ -35,7 +35,7 @@ body {
   line-height: 1.7;
   transition: background var(--transition), color var(--transition);
   
-  /* Transformation Effect - CSS Only (No JS delay) */
+  
   animation: pageEntrance 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -50,7 +50,7 @@ body {
   }
 }
 
-/* Base styles for interactivity */
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Bebas Neue', sans-serif;
   font-weight: normal;
@@ -375,12 +375,363 @@ footer {
     color:#ff3c00;   
 }
 
+/* ══════════════════════════════════════════════════════════════
+   RTL TOGGLE BUTTON
+══════════════════════════════════════════════════════════════ */
+#rtl-toggle {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  flex-shrink: 0;
+}
+#rtl-toggle:hover { background: var(--border); }
+
+html[dir="rtl"] #rtl-toggle {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+html[dir="rtl"] .dropdown {
+  left: auto;
+  right: 0;
+}
+
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 0;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+
+  transition: all 0.25s ease;
+  z-index: 9999;
+}
+
+
+.has-dropdown.open .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+/* ═══════════════════════════════════════
+   NAVBAR + DROPDOWN (FINAL CLEAN VERSION)
+═══════════════════════════════════════ */
+
+.nav-links .nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-links .nav-parent {
+  text-decoration: none;
+}
+
+
+.nav-links .nav-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: background 0.18s;
+}
+
+.nav-links .nav-chevron:hover {
+  background: rgba(232, 57, 42, 0.12);
+}
+
+.nav-links .nav-chevron i {
+  font-size: 0.6rem;
+  opacity: 0.6;
+  transition: transform 0.25s ease, opacity 0.2s;
+}
+
+
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+
+  min-width: 220px;
+  background: #ffffff;
+  border: 1px solid #e0ddd8;
+  border-radius: 12px;
+  padding: 8px;
+
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: all 0.25s ease;
+  z-index: 9999;
+}
+
+
+.has-dropdown.open > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+.dropdown.dropdown-wide {
+  min-width: 300px;
+  left: 0;
+  transform: translateX(-30%) translateY(-8px);
+}
+
+.has-dropdown.open > .dropdown.dropdown-wide {
+  transform: translateX(-30%) translateY(0);
+}
+
+
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-left: 1px solid #e0ddd8;
+  border-top: 1px solid #e0ddd8;
+}
+
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: #555450;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+}
+
+.dropdown a:hover {
+  background: rgba(232, 57, 42, 0.07);
+  color: #111;
+}
+
+
+.has-dropdown.open > .nav-chevron i {
+  transform: rotate(180deg);
+  opacity: 1;
+  color: #e8392a;
+}
+
+
+html[dir="rtl"] .dropdown {
+  left: auto;
+  right: 0;
+  transform: translateX(0) translateY(-8px);
+}
+
+html[dir="rtl"] .has-dropdown.open > .dropdown {
+  transform: translateX(0) translateY(0);
+}
+
+
+@media (max-width: 768px) {
+  .nav-links .nav-item {
+    display: none;
+  }
+  .dropdown {
+    display: none;
+  }
+}
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — mobile overrides (must come before RTL block)
+══════════════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
+  .nav-links  { display: none; }
+  .hamburger  { display: flex; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .nav-actions .btn-signup { display: none; }
 }
 @media (max-width: 560px) {
   .footer-grid { grid-template-columns: 1fr; }
-  .navbar h1 { font-size: 1.5rem; }
+  .navbar h1   { font-size: 1.5rem; }
+}
+
+
+
+.mob-signup-wrap { display: none; padding: 12px 0 4px; }
+.mob-signup-wrap .btn-signup {
+  display: block;
+  background: var(--text);
+  color: var(--bg) !important;
+  padding: 11px 24px;
+  border-radius: var(--radius);
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  transition: background var(--transition);
+  text-align: center;
+  border: none;
+}
+.mob-signup-wrap .btn-signup:hover { background: var(--accent); }
+@media (max-width: 900px) { .mob-signup-wrap { display: block; } }
+
+/* ══════════════════════════════════════════════════════════════
+   RTL — FULL LAYOUT FLIP
+   Strategy: let `direction:rtl` handle text & inline flow
+   automatically; only manually fix flex containers that have an
+   explicit flex-direction and absolute-positioned elements.
+══════════════════════════════════════════════════════════════ */
+html[dir="rtl"] { direction: rtl; }
+
+
+/* 
+  navbar is flex row + space-between.
+  In RTL the browser places items right→left automatically when
+  direction:rtl is set, so we do NOT need flex-direction:row-reverse
+  (that would double-flip it).  We only fix sub-items that have
+  explicit layout.
+*/
+
+
+html[dir="rtl"] .nav-links { flex-direction: row-reverse; }
+
+
+
+html[dir="rtl"] p,
+html[dir="rtl"] span,
+html[dir="rtl"] li {
+  unicode-bidi: isolate;
+}
+html[dir="rtl"] li {
+  direction: ltr;
+  unicode-bidi: isolate; 
+}
+
+/* nav-actions: keep order — logo stays left, actions stay right
+   because space-between already handles it with direction:rtl */
+
+
+
+html[dir="rtl"] .has-dropdown { position: relative; }
+html[dir="rtl"] .dropdown,
+html[dir="rtl"] .dropdown-wide {
+  left: auto !important;
+  right: 0;
+}
+
+
+html[dir="rtl"] #mobile-menu { text-align: right; }
+html[dir="rtl"] .mob-sub {
+  padding-left: 0;
+  padding-right: 16px;
+}
+
+
+
+html[dir="rtl"] .split     { flex-direction: row-reverse; }
+html[dir="rtl"] .h2-split  { flex-direction: row-reverse; }
+
+
+html[dir="rtl"] .checklist li  { text-align: right; }
+html[dir="rtl"] .h2-checklist li { text-align: right; }
+html[dir="rtl"] .checklist li i { margin-right: 0; margin-left: 10px; }
+
+
+html[dir="rtl"] .text-link i,
+html[dir="rtl"] .prog-cta  i,
+html[dir="rtl"] .step-arrow i { transform: scaleX(-1); display: inline-block; }
+
+
+html[dir="rtl"] .steps    { flex-direction: row-reverse; }
+html[dir="rtl"] .h2-steps { flex-direction: row-reverse; }
+
+
+html[dir="rtl"] .img-badge,
+html[dir="rtl"] .h2-float-badge { left: auto; right: -16px; }
+
+
+html[dir="rtl"] .hero-eyebrow,
+html[dir="rtl"] .h2-eyebrow { flex-direction: row-reverse; }
+
+
+html[dir="rtl"] .hero-stats-bar { flex-direction: row-reverse; }
+
+
+html[dir="rtl"] .footer-bottom  { flex-direction: row-reverse; }
+html[dir="rtl"] .footer-info    { flex-direction: row-reverse; }
+html[dir="rtl"] .footer-links a { margin-left: 0; margin-right: 20px; }
+
+
+html[dir="rtl"] .newsletter-form { flex-direction: row-reverse; }
+
+
+html[dir="rtl"] .section-header,
+html[dir="rtl"] .h2-facility-header,
+html[dir="rtl"] .h2-journey-header,
+html[dir="rtl"] .h2-results-header { text-align: center; }
+
+
+/* Headings, logo, and number stat text stay visually LTR
+   even when page direction is RTL (they're English content) */
+html[dir="rtl"] .logo,
+html[dir="rtl"] .hero-title,
+html[dir="rtl"] .hero-title em,
+html[dir="rtl"] .h2-hero-content h1,
+html[dir="rtl"] .h2-hero-content h1 span,
+html[dir="rtl"] .hstat-num,
+html[dir="rtl"] .h2-result-num,
+html[dir="rtl"] .h2-float-badge strong,
+html[dir="rtl"] .img-badge strong {
+  unicode-bidi: plaintext;
+  text-align: right; 
+}
+
+
+html[dir="rtl"] .hero-eyebrow span,
+html[dir="rtl"] .h2-eyebrow span {
+  unicode-bidi: plaintext;
 }

@@ -6,16 +6,20 @@
   <title>Blog â€“ FitCore Gym</title>
   <meta name="description" content="Fitness articles, tips, and guides from FitCore.">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style-page.css">
   <link rel="stylesheet" href="../assets/css/blog.css">
-  <link rel="stylesheet" href="../assets/css/navbar.css">
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>if(localStorage.getItem('fitcore-theme') === 'dark') document.documentElement.classList.add('dark');</script>
-<noscript><style>body { opacity: 1 !important; }</style></noscript>
+<script>
+  (function(){
+    var d = localStorage.getItem('fitcore-dir');
+    if(d==='rtl'){ document.documentElement.setAttribute('dir','rtl'); document.documentElement.setAttribute('lang','ar'); }
+    else { document.documentElement.setAttribute('dir','ltr'); document.documentElement.setAttribute('lang','en'); }
+  })();
+</script>
 </head>
-<body class="blog-page">
-
+<body>
 
 <header>
   <div class="container navbar">
@@ -29,33 +33,19 @@
         </div>
       </div>
       <a href="aboutus.html">About</a>
-      <div class="nav-item has-dropdown">
-        <a href="services.html" class="nav-parent">Services</a>
-        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        <div class="dropdown">
-          <a href="service-personal-training.html"><i class="fa-solid fa-user"></i> Personal Training</a>
-          <a href="service-strength-training.html"><i class="fa-solid fa-dumbbell"></i> Strength Training</a>
-          <a href="service-hiit.html"><i class="fa-solid fa-bolt"></i> HIIT Sessions</a>
-          <a href="service-nutrition.html"><i class="fa-solid fa-apple-whole"></i> Nutrition Coaching</a>
-        </div>
-      </div>
-      <div class="nav-item has-dropdown">
-        <a href="blog.html" class="nav-parent active">Blog</a>
-        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        <div class="dropdown dropdown-wide">
-          <a href="blog-article.html"><i class="fa-solid fa-newspaper"></i> How to Build Muscle the Smart Way</a>
-          <a href="blog-article-fat-loss.html"><i class="fa-solid fa-fire"></i> Smart Fat Loss Without Losing Muscle</a>
-          <a href="blog-article-hiit-cardio.html"><i class="fa-solid fa-stopwatch"></i> HIIT vs Traditional Cardio</a>
-          <a href="blog-article-consistency.html"><i class="fa-solid fa-brain"></i> The Psychology of Gym Consistency</a>
-          <a href="blog-article-personal-training.html"><i class="fa-solid fa-trophy"></i> Why Personal Training Accelerates Results</a>
-        </div>
-      </div>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
       <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
+      <a href="admin.html">Dashboard</a>
     </nav>
     <div class="nav-actions">
-      <button id="theme-toggle">ðŸŒ™</button>
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button id="rtl-toggle" aria-label="Switch to RTL" title="Switch to RTL">&#x2B62;</button>
       <a href="signup.html" class="btn-signup">Sign Up</a>
+      <button class="mobile-menu-btn hamburger" id="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
   <div id="mobile-menu">
@@ -67,40 +57,29 @@
       </div>
     </div>
     <a href="aboutus.html">About</a>
-    <div class="mob-item">
-      <a href="#" class="mob-parent">Services <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
-      <div class="mob-sub">
-        <a href="services.html">All Services</a>
-        <a href="service-personal-training.html">Personal Training</a>
-        <a href="service-strength-training.html">Strength Training</a>
-        <a href="service-hiit.html">HIIT Sessions</a>
-        <a href="service-nutrition.html">Nutrition Coaching</a>
-      </div>
-    </div>
-    <div class="mob-item">
-      <a href="#" class="mob-parent">Blog <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
-      <div class="mob-sub">
-        <a href="blog.html">All Articles</a>
-        <a href="blog-article.html">Build Muscle the Smart Way</a>
-        <a href="blog-article-fat-loss.html">Smart Fat Loss</a>
-        <a href="blog-article-hiit-cardio.html">HIIT vs Cardio</a>
-        <a href="blog-article-consistency.html">Psychology of Consistency</a>
-        <a href="blog-article-personal-training.html">Personal Training Results</a>
-      </div>
-    </div>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
     <a href="pricing.html">Pricing</a>
     <a href="contact.html">Contact</a>
+    <a href="admin.html">Dashboard</a>
+    
+    <div class="mob-signup-wrap">
+      <a href="signup.html" class="btn-signup">Sign Up</a>
+    </div>
   </div>
 </header>
 
-
-<section class="blog-hero">
-  <div class="container">
-    <div class="blog-hero-label">
-      <span class="issue-tag">FitCore Journal</span>
-      <span class="issue-num">Vol. 01 Â· 2026</span>
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <img src="../images/blog-hero.jpg" onerror="this.src='../images/gym-hero.jpg'" alt="Blog" loading="eager">
+    <div class="page-hero-tint"></div>
+  </div>
+  <div class="page-hero-body container">
+    <div class="page-hero-eyebrow">
+      <span class="page-eyebrow-line"></span>
+      <span>FitCore Journal · Vol. 01 · 2026</span>
     </div>
-    <h1 class="blog-hero-title">The Knowledge<br>That <em>Builds</em><br>Better Bodies</h1>
+    <h1>The Knowledge<br>That <em>Builds</em><br>Better Bodies</h1>
   </div>
 </section>
 
@@ -184,7 +163,7 @@
       <article class="article-card" data-title="HIIT vs Traditional Cardio" data-tags="cardio">
         <a href="blog-article-hiit-cardio.html" class="card-img-link">
           <div class="card-img">
-            <img src="../images/blog3.avif" alt="HIIT vs Cardio">
+            <img src="../images/blog3.jpg" alt="HIIT vs Cardio">
             <span class="cat-tag cardio">Cardio</span>
           </div>
         </a>

@@ -1,156 +1,727 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin – FitCore Gym</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/dashboard.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>if(localStorage.getItem('fitcore-theme') === 'dark') document.documentElement.classList.add('dark');</script>
 </head>
 <body>
 
 <div class="dashboard">
 
+  
   <aside class="sidebar">
-    <div class="profile">
-      <img src="../images/admin3.webp" alt="Admin">
-      <h3>Admin</h3>
-      <span>Gym Manager</span>
-    </div>
-    <div class="nav-link active" data-section="dashboard">Dashboard</div>
-    <div class="nav-link" data-section="members">Members</div>
-    <div class="nav-link" data-section="trainers">Trainers</div>
-    <div class="nav-link" data-section="programs">Programs</div>
-    <a href="index.html" class="logout">Logout</a>
-  </aside>
-
-  <main class="main">
-
-    <section id="dashboard" class="section active">
-      <div class="cards">
-        <div class="card">
-          <p>Monthly Revenue</p>
-          <h2>₹3,45,000</h2>
-        </div>
-        <div class="card">
-          <p>Today's Sessions</p>
-          <h2 class="danger">22</h2>
-        </div>
-        <div class="card">
-          <p>Active Members</p>
-          <h2>318</h2>
-        </div>
-      </div>
-
-      <div class="content-grid">
-        <div class="analytics">
-          <h3>Revenue Analytics</h3>
-          <canvas id="chart"></canvas>
-        </div>
-        <div class="schedule">
-          <h3>Today's Schedule</h3>
-          <div class="schedule-item">
-            <span>07:00 AM</span>
-            <p>Rahul – Personal Training</p>
-          </div>
-          <div class="schedule-item">
-            <span>09:30 AM</span>
-            <p>HIIT Group Session</p>
-          </div>
-          <div class="schedule-item">
-            <span>05:00 PM</span>
-            <p>Yoga – Neha</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="members" class="section">
-      <div class="table-card">
-        <h3>All Members</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Plan</th>
-              <th>Status</th>
-              <th>Joined</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Rahul Sharma</td><td>Premium</td><td><span class="badge active">Active</span></td><td>12 Feb 2026</td></tr>
-            <tr><td>Priya Reddy</td><td>Basic</td><td><span class="badge pending">Pending</span></td><td>01 Mar 2026</td></tr>
-            <tr><td>Vikram Singh</td><td>Gold</td><td><span class="badge expired">Expired</span></td><td>15 Jan 2026</td></tr>
-            <tr><td>Anjali Rao</td><td>Premium</td><td><span class="badge active">Active</span></td><td>18 Feb 2026</td></tr>
-            <tr><td>Karthik</td><td>Basic</td><td><span class="badge active">Active</span></td><td>22 Feb 2026</td></tr>
-            <tr><td>Megha</td><td>Gold</td><td><span class="badge pending">Pending</span></td><td>10 Mar 2026</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="trainers" class="section">
-      <h3 class="section-title">Our Trainers</h3>
-      <div class="grid-3">
-        <div class="trainer-card">
-          <img src="../images/admin2.jpg" alt="Amit Verma">
-          <h4>Amit Verma</h4>
-          <p>Strength Coach</p>
-          <span class="trainer-badge">5 Years Experience</span>
-          <button>View Profile</button>
-        </div>
-        <div class="trainer-card">
-          <img src="../images/admin4.jpg" alt="Neha Kapoor">
-          <h4>Neha Kapoor</h4>
-          <p>Yoga Specialist</p>
-          <span class="trainer-badge">3 Years Experience</span>
-          <button>View Profile</button>
-        </div>
-        <div class="trainer-card">
-          <img src="../images/admin1.jpg" alt="Rohan Malhotra">
-          <h4>Rohan Malhotra</h4>
-          <p>CrossFit Coach</p>
-          <span class="trainer-badge">6 Years Experience</span>
-          <button>View Profile</button>
-        </div>
-        <div class="trainer-card">
-          <img src="../images/admin6.jpg" alt="Simran Kaur">
-          <h4>Simran Kaur</h4>
-          <p>Zumba Instructor</p>
-          <span class="trainer-badge">4 Years Experience</span>
-          <button>View Profile</button>
-        </div>
-      </div>
-    </section>
 
     
-    <section id="programs" class="section">
-      <div class="grid-3">
-        <div class="program-card">
-          <h4>Weight Loss</h4>
-          <p>12 Weeks Program</p>
-          <p>₹8,000</p>
+    <a href="index.html" class="sidebar-logo">
+      <div class="logo-bolt">⚡</div>
+      <div>
+        <span class="logo-wordmark">FitCore</span>
+        <span class="logo-sub">Admin Portal</span>
+      </div>
+    </a>
+
+    
+    <div class="sidebar-profile">
+      <div class="avatar-wrap">
+        <img src="https://ui-avatars.com/api/?name=Admin&background=c8390f&color=fff&size=80" alt="Admin">
+        <div class="profile-dot"></div>
+      </div>
+      <div class="profile-info">
+        <strong>Admin</strong>
+        <span>Gym Manager</span>
+      </div>
+    </div>
+
+    
+    <nav class="nav-section">
+      <div class="nav-label">Main</div>
+      <div class="nav-link active" data-section="overview"><i class="fa-solid fa-gauge-high"></i> Overview</div>
+      <div class="nav-link" data-section="members"><i class="fa-solid fa-users"></i> Members <span class="badge-pill">318</span></div>
+      <div class="nav-link" data-section="trainers"><i class="fa-solid fa-person-running"></i> Trainers</div>
+      <div class="nav-link" data-section="programs"><i class="fa-solid fa-dumbbell"></i> Programs</div>
+
+      <div class="nav-label" style="margin-top:10px;">Finance</div>
+      <div class="nav-link" data-section="revenue"><i class="fa-solid fa-chart-line"></i> Revenue</div>
+
+      <div class="nav-label" style="margin-top:10px;">System</div>
+      <div class="nav-link" data-section="notifications"><i class="fa-solid fa-bell"></i> Notifications <span class="badge-pill">4</span></div>
+      <div class="nav-link" data-section="settings"><i class="fa-solid fa-sliders"></i> Settings</div>
+    </nav>
+
+    
+    <div class="sidebar-bottom">
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+        <span id="themeLabel">Dark Mode</span>
+        <div class="toggle-track"><div class="toggle-thumb"></div></div>
+      </button>
+      <a href="index.html" class="logout-btn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </a>
+    </div>
+
+  </aside>
+
+  
+  <div class="main">
+
+    
+    <header class="topbar">
+      <div class="topbar-left">
+        <h2 id="pageTitle">Overview</h2>
+        <p id="pageSubtitle">Welcome back, Admin. Here's what's happening today.</p>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search members, programs…">
         </div>
-        <div class="program-card">
-          <h4>Muscle Gain</h4>
-          <p>16 Weeks Program</p>
-          <p>₹12,000</p>
+        <div class="topbar-icon" onclick="showSection('notifications')">
+          <i class="fa-solid fa-bell"></i>
+          <div class="notif-dot"></div>
         </div>
-        <div class="program-card">
-          <h4>Beginner Fitness</h4>
-          <p>8 Weeks Program</p>
-          <p>₹6,000</p>
+        <div class="topbar-icon">
+          <i class="fa-solid fa-circle-question"></i>
         </div>
       </div>
-    </section>
+    </header>
 
-  </main>
+    
+    <div class="content">
+
+      
+      <section id="overview" class="section active">
+
+        
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-top">
+              <span class="stat-label">Monthly Revenue</span>
+              <div class="stat-icon si-orange"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+            </div>
+            <div class="stat-val">₹3,45,000</div>
+            <div class="stat-change up"><i class="fa-solid fa-arrow-trend-up"></i> +12% vs last month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-top">
+              <span class="stat-label">Active Members</span>
+              <div class="stat-icon si-green"><i class="fa-solid fa-users"></i></div>
+            </div>
+            <div class="stat-val">318</div>
+            <div class="stat-change up"><i class="fa-solid fa-arrow-trend-up"></i> +23 this month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-top">
+              <span class="stat-label">Today's Sessions</span>
+              <div class="stat-icon si-blue"><i class="fa-solid fa-calendar-check"></i></div>
+            </div>
+            <div class="stat-val">22</div>
+            <div class="stat-change down"><i class="fa-solid fa-arrow-trend-down"></i> -2 vs yesterday</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-top">
+              <span class="stat-label">Expiring Soon</span>
+              <div class="stat-icon si-purple"><i class="fa-solid fa-clock"></i></div>
+            </div>
+            <div class="stat-val">14</div>
+            <div class="stat-change down"><i class="fa-solid fa-triangle-exclamation"></i> Needs renewal</div>
+          </div>
+        </div>
+
+        
+        <div class="dash-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <span class="panel-title">Revenue — 2026</span>
+              <span class="panel-action" onclick="showSection('revenue')">View Full Report →</span>
+            </div>
+            <canvas id="revenueChart" style="max-height:220px;"></canvas>
+          </div>
+          <div class="panel">
+            <div class="panel-header">
+              <span class="panel-title">Today's Schedule</span>
+              <span class="panel-action">+ Add</span>
+            </div>
+            <div class="sched-item">
+              <div class="sched-time">07:00 AM</div>
+              <div><div class="sched-name">Rahul Sharma</div><div class="sched-type">Personal Training</div></div>
+            </div>
+            <div class="sched-item">
+              <div class="sched-time">09:30 AM</div>
+              <div><div class="sched-name">HIIT Group</div><div class="sched-type">12 participants</div></div>
+            </div>
+            <div class="sched-item">
+              <div class="sched-time">11:00 AM</div>
+              <div><div class="sched-name">Vikram Singh</div><div class="sched-type">Strength Assessment</div></div>
+            </div>
+            <div class="sched-item">
+              <div class="sched-time">05:00 PM</div>
+              <div><div class="sched-name">Yoga — Neha</div><div class="sched-type">8 participants</div></div>
+            </div>
+            <div class="sched-item">
+              <div class="sched-time">07:30 PM</div>
+              <div><div class="sched-name">CrossFit Open</div><div class="sched-type">20 participants</div></div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="activity-row">
+          <div class="panel">
+            <div class="panel-header">
+              <span class="panel-title">Recent Sign-ups</span>
+              <span class="panel-action" onclick="showSection('members')">All Members →</span>
+            </div>
+            <table>
+              <thead>
+                <tr><th>Name</th><th>Plan</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="td-name"><div class="td-avatar">RS</div> Rahul Sharma</div></td>
+                  <td>Premium</td>
+                  <td><span class="badge active">● Active</span></td>
+                </tr>
+                <tr>
+                  <td><div class="td-name"><div class="td-avatar">PR</div> Priya Reddy</div></td>
+                  <td>Basic</td>
+                  <td><span class="badge pending">● Pending</span></td>
+                </tr>
+                <tr>
+                  <td><div class="td-name"><div class="td-avatar">VS</div> Vikram Singh</div></td>
+                  <td>Gold</td>
+                  <td><span class="badge expired">● Expired</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="panel">
+            <div class="panel-header">
+              <span class="panel-title">Notifications</span>
+              <span class="panel-action">Mark all read</span>
+            </div>
+            <div class="notif-list">
+              <div class="notif-item">
+                <div class="notif-dot-big nd-orange"></div>
+                <div><div class="notif-txt">Vikram Singh's membership expired</div><div class="notif-time">2 hrs ago</div></div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-dot-big nd-green"></div>
+                <div><div class="notif-txt">New sign-up: Megha (Gold Plan)</div><div class="notif-time">4 hrs ago</div></div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-dot-big nd-blue"></div>
+                <div><div class="notif-txt">Revenue target 85% achieved</div><div class="notif-time">Yesterday</div></div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-dot-big nd-orange"></div>
+                <div><div class="notif-txt">14 memberships expiring in 7 days</div><div class="notif-time">Yesterday</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      
+      <section id="members" class="section">
+        <div class="section-hdr">
+          <h2>Members</h2>
+          <div class="hdr-action">
+            <button class="btn-outline"><i class="fa-solid fa-download"></i> Export</button>
+            <button class="btn-primary"><i class="fa-solid fa-plus"></i> Add Member</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <div class="table-head">
+            <h3>All Members (318)</h3>
+            <div class="tbl-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search by name, plan…">
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Member</th>
+                <th>Plan</th>
+                <th>Status</th>
+                <th>Joined</th>
+                <th>Expires</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="td-name"><div class="td-avatar">RS</div> Rahul Sharma</div></td>
+                <td>Premium</td>
+                <td><span class="badge active">● Active</span></td>
+                <td>12 Feb 2026</td>
+                <td>12 Feb 2027</td>
+                <td><button class="tbl-action">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="td-name"><div class="td-avatar">PR</div> Priya Reddy</div></td>
+                <td>Basic</td>
+                <td><span class="badge pending">● Pending</span></td>
+                <td>01 Mar 2026</td>
+                <td>01 Apr 2026</td>
+                <td><button class="tbl-action">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="td-name"><div class="td-avatar">VS</div> Vikram Singh</div></td>
+                <td>Gold</td>
+                <td><span class="badge expired">● Expired</span></td>
+                <td>15 Jan 2026</td>
+                <td>15 Apr 2026</td>
+                <td><button class="tbl-action">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="td-name"><div class="td-avatar">AR</div> Anjali Rao</div></td>
+                <td>Premium</td>
+                <td><span class="badge active">● Active</span></td>
+                <td>18 Feb 2026</td>
+                <td>18 Feb 2027</td>
+                <td><button class="tbl-action">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="td-name"><div class="td-avatar">KT</div> Karthik T.</div></td>
+                <td>Basic</td>
+                <td><span class="badge active">● Active</span></td>
+                <td>22 Feb 2026</td>
+                <td>22 May 2026</td>
+                <td><button class="tbl-action">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="td-name"><div class="td-avatar">MG</div> Megha G.</div></td>
+                <td>Gold</td>
+                <td><span class="badge pending">● Pending</span></td>
+                <td>10 Mar 2026</td>
+                <td>10 Jun 2026</td>
+                <td><button class="tbl-action">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="td-name"><div class="td-avatar">SN</div> Suresh N.</div></td>
+                <td>Premium</td>
+                <td><span class="badge active">● Active</span></td>
+                <td>05 Jan 2026</td>
+                <td>05 Jan 2027</td>
+                <td><button class="tbl-action">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="td-name"><div class="td-avatar">DK</div> Deepa K.</div></td>
+                <td>Basic</td>
+                <td><span class="badge active">● Active</span></td>
+                <td>28 Feb 2026</td>
+                <td>28 May 2026</td>
+                <td><button class="tbl-action">Manage</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      
+      <section id="trainers" class="section">
+        <div class="section-hdr">
+          <h2>Trainers</h2>
+          <div class="hdr-action">
+            <button class="btn-outline"><i class="fa-solid fa-filter"></i> Filter</button>
+            <button class="btn-primary"><i class="fa-solid fa-plus"></i> Add Trainer</button>
+          </div>
+        </div>
+
+        <div class="trainer-grid">
+          
+          <div class="trainer-card">
+            <div class="trainer-cover">
+              <div class="trainer-cover-img" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=60');"></div>
+            </div>
+            <div class="trainer-avatar-wrap">
+              <img class="trainer-avatar" src="https://ui-avatars.com/api/?name=Amit+Verma&background=c8390f&color=fff&size=80" alt="Amit Verma">
+            </div>
+            <div class="trainer-body">
+              <div class="trainer-name">Amit Verma</div>
+              <div class="trainer-role">Strength & Conditioning Coach</div>
+              <div class="trainer-exp">5 Yrs Experience</div>
+              <div class="trainer-stats">
+                <div><strong>48</strong> Clients</div>
+                <div><strong>4.9</strong> Rating</div>
+                <div><strong>12</strong> Programs</div>
+              </div>
+              <button class="trainer-btn">View Profile</button>
+            </div>
+          </div>
+          
+          <div class="trainer-card">
+            <div class="trainer-cover" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">
+              <div class="trainer-cover-img" style="background-image:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=60');"></div>
+            </div>
+            <div class="trainer-avatar-wrap">
+              <img class="trainer-avatar" src="https://ui-avatars.com/api/?name=Neha+Kapoor&background=7c3aed&color=fff&size=80" alt="Neha Kapoor">
+            </div>
+            <div class="trainer-body">
+              <div class="trainer-name">Neha Kapoor</div>
+              <div class="trainer-role">Yoga & Mindfulness Specialist</div>
+              <div class="trainer-exp">3 Yrs Experience</div>
+              <div class="trainer-stats">
+                <div><strong>36</strong> Clients</div>
+                <div><strong>4.8</strong> Rating</div>
+                <div><strong>8</strong> Programs</div>
+              </div>
+              <button class="trainer-btn">View Profile</button>
+            </div>
+          </div>
+          
+          <div class="trainer-card">
+            <div class="trainer-cover" style="background:linear-gradient(135deg,#0369a1,#0c4a6e);">
+              <div class="trainer-cover-img" style="background-image:url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&q=60');"></div>
+            </div>
+            <div class="trainer-avatar-wrap">
+              <img class="trainer-avatar" src="https://ui-avatars.com/api/?name=Rohan+Malhotra&background=0369a1&color=fff&size=80" alt="Rohan Malhotra">
+            </div>
+            <div class="trainer-body">
+              <div class="trainer-name">Rohan Malhotra</div>
+              <div class="trainer-role">CrossFit & HIIT Coach</div>
+              <div class="trainer-exp">6 Yrs Experience</div>
+              <div class="trainer-stats">
+                <div><strong>55</strong> Clients</div>
+                <div><strong>5.0</strong> Rating</div>
+                <div><strong>15</strong> Programs</div>
+              </div>
+              <button class="trainer-btn">View Profile</button>
+            </div>
+          </div>
+          
+          <div class="trainer-card">
+            <div class="trainer-cover" style="background:linear-gradient(135deg,#d97706,#92400e);">
+              <div class="trainer-cover-img" style="background-image:url('https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=400&q=60');"></div>
+            </div>
+            <div class="trainer-avatar-wrap">
+              <img class="trainer-avatar" src="https://ui-avatars.com/api/?name=Simran+Kaur&background=d97706&color=fff&size=80" alt="Simran Kaur">
+            </div>
+            <div class="trainer-body">
+              <div class="trainer-name">Simran Kaur</div>
+              <div class="trainer-role">Zumba & Dance Fitness</div>
+              <div class="trainer-exp">4 Yrs Experience</div>
+              <div class="trainer-stats">
+                <div><strong>42</strong> Clients</div>
+                <div><strong>4.7</strong> Rating</div>
+                <div><strong>9</strong> Programs</div>
+              </div>
+              <button class="trainer-btn">View Profile</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="programs" class="section">
+        <div class="section-hdr">
+          <h2>Programs</h2>
+          <div class="hdr-action">
+            <button class="btn-outline"><i class="fa-solid fa-filter"></i> Filter</button>
+            <button class="btn-primary"><i class="fa-solid fa-plus"></i> New Program</button>
+          </div>
+        </div>
+
+        <div class="program-grid">
+          <div class="program-card">
+            <div class="program-top">
+              <div class="program-tag"><i class="fa-solid fa-fire"></i> Fat Loss</div>
+              <div class="program-name">Weight Loss Accelerator</div>
+              <div class="program-desc">Cardio + diet plan designed to burn fat fast while preserving lean muscle mass.</div>
+            </div>
+            <div class="program-meta">
+              <span><i class="fa-regular fa-clock"></i> 12 Weeks</span>
+              <span><i class="fa-solid fa-users"></i> 84 enrolled</span>
+              <span><i class="fa-solid fa-star" style="color:#f59e0b;"></i> 4.8</span>
+            </div>
+            <div class="program-footer">
+              <div class="program-price">₹8,000</div>
+              <button class="program-enroll">Manage</button>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="program-top">
+              <div class="program-tag"><i class="fa-solid fa-dumbbell"></i> Strength</div>
+              <div class="program-name">Muscle Gain Pro</div>
+              <div class="program-desc">Progressive overload-based hypertrophy program with nutrition guidance included.</div>
+            </div>
+            <div class="program-meta">
+              <span><i class="fa-regular fa-clock"></i> 16 Weeks</span>
+              <span><i class="fa-solid fa-users"></i> 62 enrolled</span>
+              <span><i class="fa-solid fa-star" style="color:#f59e0b;"></i> 4.9</span>
+            </div>
+            <div class="program-footer">
+              <div class="program-price">₹12,000</div>
+              <button class="program-enroll">Manage</button>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="program-top">
+              <div class="program-tag"><i class="fa-solid fa-seedling"></i> Beginner</div>
+              <div class="program-name">Beginner Fitness Kickstart</div>
+              <div class="program-desc">Perfect starting point — build habits, flexibility, and base fitness from zero.</div>
+            </div>
+            <div class="program-meta">
+              <span><i class="fa-regular fa-clock"></i> 8 Weeks</span>
+              <span><i class="fa-solid fa-users"></i> 110 enrolled</span>
+              <span><i class="fa-solid fa-star" style="color:#f59e0b;"></i> 4.7</span>
+            </div>
+            <div class="program-footer">
+              <div class="program-price">₹6,000</div>
+              <button class="program-enroll">Manage</button>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="program-top">
+              <div class="program-tag"><i class="fa-solid fa-bolt"></i> CrossFit</div>
+              <div class="program-name">CrossFit Fundamentals</div>
+              <div class="program-desc">WOD-based training combining functional movements, Olympic lifting, and cardio.</div>
+            </div>
+            <div class="program-meta">
+              <span><i class="fa-regular fa-clock"></i> 10 Weeks</span>
+              <span><i class="fa-solid fa-users"></i> 38 enrolled</span>
+              <span><i class="fa-solid fa-star" style="color:#f59e0b;"></i> 4.6</span>
+            </div>
+            <div class="program-footer">
+              <div class="program-price">₹10,000</div>
+              <button class="program-enroll">Manage</button>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="program-top">
+              <div class="program-tag"><i class="fa-solid fa-spa"></i> Yoga</div>
+              <div class="program-name">Yoga & Flexibility</div>
+              <div class="program-desc">Daily yoga flows to improve flexibility, posture, and mental clarity.</div>
+            </div>
+            <div class="program-meta">
+              <span><i class="fa-regular fa-clock"></i> 6 Weeks</span>
+              <span><i class="fa-solid fa-users"></i> 74 enrolled</span>
+              <span><i class="fa-solid fa-star" style="color:#f59e0b;"></i> 5.0</span>
+            </div>
+            <div class="program-footer">
+              <div class="program-price">₹5,000</div>
+              <button class="program-enroll">Manage</button>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="program-top">
+              <div class="program-tag"><i class="fa-solid fa-trophy"></i> Elite</div>
+              <div class="program-name">Elite Athlete Bundle</div>
+              <div class="program-desc">All-inclusive plan: 1-on-1 coaching, diet plan, recovery protocols, and more.</div>
+            </div>
+            <div class="program-meta">
+              <span><i class="fa-regular fa-clock"></i> 24 Weeks</span>
+              <span><i class="fa-solid fa-users"></i> 18 enrolled</span>
+              <span><i class="fa-solid fa-star" style="color:#f59e0b;"></i> 4.9</span>
+            </div>
+            <div class="program-footer">
+              <div class="program-price">₹24,000</div>
+              <button class="program-enroll">Manage</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="revenue" class="section">
+        <div class="section-hdr">
+          <h2>Revenue</h2>
+          <div class="hdr-action">
+            <button class="btn-outline"><i class="fa-solid fa-download"></i> Export CSV</button>
+          </div>
+        </div>
+
+        <div class="rev-cards" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px;">
+          <div class="rev-card">
+            <div class="rev-card-label">Total Revenue</div>
+            <div class="rev-card-val">₹20.7L</div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-card-label">This Month</div>
+            <div class="rev-card-val">₹3,45,000</div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-card-label">Avg / Member</div>
+            <div class="rev-card-val">₹1,084</div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-card-label">Growth</div>
+            <div class="rev-card-val" style="color:#16a34a;">+12%</div>
+          </div>
+        </div>
+
+        <div class="analytics-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <span class="panel-title">Monthly Revenue — 2026</span>
+            </div>
+            <canvas id="revChart2" style="max-height:260px;"></canvas>
+          </div>
+          <div class="panel">
+            <div class="panel-header">
+              <span class="panel-title">Revenue by Plan</span>
+            </div>
+            <canvas id="planChart" style="max-height:200px;margin:auto;display:block;"></canvas>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:16px;">
+          <div class="panel-header">
+            <span class="panel-title">Recent Transactions</span>
+          </div>
+          <table>
+            <thead>
+              <tr><th>Member</th><th>Plan</th><th>Amount</th><th>Date</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Rahul Sharma</td><td>Premium (Annual)</td><td>₹18,000</td><td>12 Apr 2026</td><td><span class="badge active">● Paid</span></td></tr>
+              <tr><td>Anjali Rao</td><td>Premium (Annual)</td><td>₹18,000</td><td>11 Apr 2026</td><td><span class="badge active">● Paid</span></td></tr>
+              <tr><td>Megha G.</td><td>Gold (Monthly)</td><td>₹2,999</td><td>10 Apr 2026</td><td><span class="badge pending">● Pending</span></td></tr>
+              <tr><td>Karthik T.</td><td>Basic (Quarterly)</td><td>₹3,500</td><td>09 Apr 2026</td><td><span class="badge active">● Paid</span></td></tr>
+              <tr><td>Vikram Singh</td><td>Gold (Annual)</td><td>₹28,000</td><td>08 Apr 2026</td><td><span class="badge expired">● Failed</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      
+      <section id="notifications" class="section">
+        <div class="section-hdr">
+          <h2>Notifications</h2>
+          <button class="btn-outline">Mark All Read</button>
+        </div>
+        <div class="panel">
+          <div class="notif-list">
+            <div class="notif-item">
+              <div class="notif-dot-big nd-orange"></div>
+              <div><div class="notif-txt"><strong>Membership Expired:</strong> Vikram Singh's Gold membership expired today.</div><div class="notif-time">2 hours ago</div></div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-dot-big nd-green"></div>
+              <div><div class="notif-txt"><strong>New Sign-up:</strong> Megha G. enrolled in the Gold Plan.</div><div class="notif-time">4 hours ago</div></div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-dot-big nd-blue"></div>
+              <div><div class="notif-txt"><strong>Revenue Milestone:</strong> Monthly target is 85% achieved with 19 days remaining.</div><div class="notif-time">Yesterday, 3:00 PM</div></div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-dot-big nd-orange"></div>
+              <div><div class="notif-txt"><strong>Renewal Alert:</strong> 14 memberships are expiring within 7 days. Send reminder?</div><div class="notif-time">Yesterday, 10:00 AM</div></div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-dot-big nd-green"></div>
+              <div><div class="notif-txt"><strong>Payment Received:</strong> Anjali Rao paid ₹18,000 for Premium Annual.</div><div class="notif-time">11 Apr 2026</div></div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-dot-big nd-blue"></div>
+              <div><div class="notif-txt"><strong>New Trainer:</strong> Simran Kaur's profile is now live on the member portal.</div><div class="notif-time">10 Apr 2026</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="settings" class="section">
+        <div class="section-hdr">
+          <h2>Settings</h2>
+        </div>
+        <div class="settings-grid">
+          
+          <div class="settings-card">
+            <h4>Gym Profile</h4>
+            <div class="setting-row">
+              <div><div class="setting-label">Gym Name</div></div>
+              <input class="settings-input" type="text" value="FitCore Gym" style="width:160px;">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">City</div></div>
+              <input class="settings-input" type="text" value="Hyderabad" style="width:160px;">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Contact Email</div></div>
+              <input class="settings-input" type="email" value="admin@fitcore.in" style="width:180px;">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Phone</div></div>
+              <input class="settings-input" type="text" value="+91 98765 43210" style="width:160px;">
+            </div>
+            <button class="settings-save">Save Changes</button>
+          </div>
+
+          
+          <div class="settings-card">
+            <h4>Notification Preferences</h4>
+            <div class="setting-row">
+              <div><div class="setting-label">Membership Expiry Alerts</div><div class="setting-sub">Notify 7 days before expiry</div></div>
+              <div class="switch on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">New Sign-up Alerts</div><div class="setting-sub">Alert on every new registration</div></div>
+              <div class="switch on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Payment Alerts</div><div class="setting-sub">Notify on payment success/failure</div></div>
+              <div class="switch" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Weekly Revenue Report</div><div class="setting-sub">Email every Monday morning</div></div>
+              <div class="switch on" onclick="this.classList.toggle('on')"></div>
+            </div>
+          </div>
+
+          
+          <div class="settings-card">
+            <h4>Appearance</h4>
+            <div class="setting-row">
+              <div><div class="setting-label">Theme</div><div class="setting-sub">Toggle dark / light mode</div></div>
+              <button class="btn-outline" onclick="toggleTheme()" style="font-size:.78rem;padding:6px 12px;">
+                <i class="fa-solid fa-circle-half-stroke"></i> Toggle Theme
+              </button>
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Compact Sidebar</div><div class="setting-sub">Collapse labels, icons only</div></div>
+              <div class="switch" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Show Revenue on Overview</div></div>
+              <div class="switch on" onclick="this.classList.toggle('on')"></div>
+            </div>
+          </div>
+
+          
+          <div class="settings-card">
+            <h4>Security</h4>
+            <div class="setting-row">
+              <div><div class="setting-label">Two-Factor Auth</div><div class="setting-sub">Require OTP on login</div></div>
+              <div class="switch" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Session Timeout</div><div class="setting-sub">Auto logout after inactivity</div></div>
+              <div class="switch on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Change Password</div></div>
+              <button class="btn-outline" style="font-size:.78rem;padding:6px 12px;">Update</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
 </div>
 
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/dashboard.js"></script>
 </body>
 </html>
-
-

@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pricing â€“ FitCore Gym</title>
+  <title>Pricing – FitCore Gym</title>
   <meta name="description" content="Choose a FitCore membership plan that matches your fitness journey.">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/pricing.css">
-  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/style-page.css">
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>if(localStorage.getItem('fitcore-theme') === 'dark') document.documentElement.classList.add('dark');</script>
-<noscript><style>body { opacity: 1 !important; }</style></noscript>
+<script>
+  (function(){
+    var d = localStorage.getItem('fitcore-dir');
+    if(d==='rtl'){ document.documentElement.setAttribute('dir','rtl'); document.documentElement.setAttribute('lang','ar'); }
+    else { document.documentElement.setAttribute('dir','ltr'); document.documentElement.setAttribute('lang','en'); }
+  })();
+</script>
 </head>
 <body>
 
@@ -24,41 +29,26 @@
         <a href="index.html" class="nav-parent">Home</a>
         <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
         <div class="dropdown">
-          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-          <a href="home.html"><i class="fa-solid fa-layer-group"></i> Home Alt</a>
+          <a href="home.html"><i class="fa-solid fa-layer-group"></i> Home2</a>
         </div>
       </div>
       <a href="aboutus.html">About</a>
-      <div class="nav-item has-dropdown">
-        <a href="services.html" class="nav-parent">Services</a>
-        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        <div class="dropdown">
-          <a href="service-personal-training.html"><i class="fa-solid fa-user"></i> Personal Training</a>
-          <a href="service-strength-training.html"><i class="fa-solid fa-dumbbell"></i> Strength Training</a>
-          <a href="service-hiit.html"><i class="fa-solid fa-bolt"></i> HIIT Sessions</a>
-          <a href="service-nutrition.html"><i class="fa-solid fa-apple-whole"></i> Nutrition Coaching</a>
-        </div>
-      </div>
-      <div class="nav-item has-dropdown">
-        <a href="blog.html" class="nav-parent">Blog</a>
-        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        <div class="dropdown dropdown-wide">
-          <a href="blog-article.html"><i class="fa-solid fa-newspaper"></i> How to Build Muscle the Smart Way</a>
-          <a href="blog-article-fat-loss.html"><i class="fa-solid fa-fire"></i> Smart Fat Loss Without Losing Muscle</a>
-          <a href="blog-article-hiit-cardio.html"><i class="fa-solid fa-stopwatch"></i> HIIT vs Traditional Cardio</a>
-          <a href="blog-article-consistency.html"><i class="fa-solid fa-brain"></i> The Psychology of Gym Consistency</a>
-          <a href="blog-article-personal-training.html"><i class="fa-solid fa-trophy"></i> Why Personal Training Accelerates Results</a>
-        </div>
-      </div>
-      <a href="pricing.html" class="active">Pricing</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
+      <a href="admin.html">Dashboard</a>
     </nav>
     <div class="nav-actions">
-      <button id="theme-toggle">ðŸŒ™</button>
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button id="rtl-toggle" aria-label="Switch to RTL" title="Switch to RTL">&#x2B62;</button>
       <a href="signup.html" class="btn-signup">Sign Up</a>
+      <button class="mobile-menu-btn hamburger" id="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
-    <div id="mobile-menu">
+  <div id="mobile-menu">
     <div class="mob-item">
       <a href="#" class="mob-parent">Home <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
       <div class="mob-sub">
@@ -67,35 +57,26 @@
       </div>
     </div>
     <a href="aboutus.html">About</a>
-    <div class="mob-item">
-      <a href="#" class="mob-parent">Services <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
-      <div class="mob-sub">
-        <a href="services.html">All Services</a>
-        <a href="service-personal-training.html">Personal Training</a>
-        <a href="service-strength-training.html">Strength Training</a>
-        <a href="service-hiit.html">HIIT Sessions</a>
-        <a href="service-nutrition.html">Nutrition Coaching</a>
-      </div>
-    </div>
-    <div class="mob-item">
-      <a href="#" class="mob-parent">Blog <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
-      <div class="mob-sub">
-        <a href="blog.html">All Articles</a>
-        <a href="blog-article.html">Build Muscle the Smart Way</a>
-        <a href="blog-article-fat-loss.html">Smart Fat Loss</a>
-        <a href="blog-article-hiit-cardio.html">HIIT vs Cardio</a>
-        <a href="blog-article-consistency.html">Psychology of Consistency</a>
-        <a href="blog-article-personal-training.html">Personal Training Results</a>
-      </div>
-    </div>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
     <a href="pricing.html">Pricing</a>
     <a href="contact.html">Contact</a>
+    <a href="admin.html">Dashboard</a>
+    <div class="mob-signup-wrap">
+      <a href="signup.html" class="btn-signup">Sign Up</a>
+    </div>
   </div>
 </header>
-
-<section class="pricing-hero">
-  <div class="container">
-    <span class="pricing-label">Membership Plans</span>
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <img src="../images/pricing-hero.jpg" onerror="this.src='../images/gym-hero.jpg'" alt="Pricing" loading="eager">
+    <div class="page-hero-tint"></div>
+  </div>
+  <div class="page-hero-body container">
+    <div class="page-hero-eyebrow">
+      <span class="page-eyebrow-line"></span>
+      <span>Membership Plans</span>
+    </div>
     <h1>Simple,<br>Transparent<br><em>Pricing</em></h1>
     <p>No hidden fees. No lock-in surprises. Just the plan that fits your goals.</p>
   </div>
@@ -327,21 +308,36 @@
   document.addEventListener('click',function(e){if(!e.target.closest('.has-dropdown'))document.querySelectorAll('.has-dropdown.open').forEach(function(el){el.classList.remove('open')})});
 
   var isAnnual = false;
-  function toggleBilling(){ isAnnual = !isAnnual; updatePrices(); }
-  function setBilling(type){ isAnnual = (type==='annual'); updatePrices(); }
-  function updatePrices(){
+
+  function formatINR(n) {
+    var s = String(parseInt(n));
+    if (s.length <= 3) return s;
+    var last3 = s.slice(-3);
+    var rest  = s.slice(0, -3).replace(/\B(?=(\d{2})+(?!\d))/g, ',');
+    return rest + ',' + last3;
+  }
+
+  function toggleBilling() { isAnnual = !isAnnual; updatePrices(); }
+  function setBilling(type) { isAnnual = (type === 'annual'); updatePrices(); }
+
+  function updatePrices() {
     var thumb = document.getElementById('toggle-thumb');
     var mOpt  = document.getElementById('bill-monthly');
     var aOpt  = document.getElementById('bill-annual');
-    var notes = ['note-basic','note-standard','note-premium'];
+    var notes = ['note-basic', 'note-standard', 'note-premium'];
+
     thumb.style.transform = isAnnual ? 'translateX(26px)' : 'translateX(0)';
     mOpt.classList.toggle('active', !isAnnual);
     aOpt.classList.toggle('active', isAnnual);
-    document.querySelectorAll('.price-amount').forEach(function(el){
+
+    document.querySelectorAll('.price-amount').forEach(function(el) {
       var v = isAnnual ? el.dataset.annual : el.dataset.monthly;
-      el.textContent = 'â‚¹' + parseInt(v).toLocaleString('en-IN');
+      el.textContent = '₹' + formatINR(v);
     });
-    notes.forEach(function(id){ document.getElementById(id).style.display = isAnnual ? 'block' : 'none'; });
+
+    notes.forEach(function(id) {
+      document.getElementById(id).style.display = isAnnual ? 'block' : 'none';
+    });
   }
 </script>
 </body>

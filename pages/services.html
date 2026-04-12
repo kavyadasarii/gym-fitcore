@@ -11,11 +11,14 @@
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>if(localStorage.getItem('fitcore-theme') === 'dark') document.documentElement.classList.add('dark');</script>
-<noscript><style>body { opacity: 1 !important; }</style></noscript>
+<script>
+  (function(){
+    var d = localStorage.getItem('fitcore-dir');
+    if(d === 'rtl'){ document.documentElement.setAttribute('dir','rtl'); document.documentElement.setAttribute('lang','ar'); }
+  })();
+</script>
 </head>
 <body>
-
 
 <header>
   <div class="container navbar">
@@ -29,36 +32,22 @@
         </div>
       </div>
       <a href="aboutus.html">About</a>
-      <div class="nav-item has-dropdown">
-        <a href="services.html" class="nav-parent active">Services</a>
-        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        <div class="dropdown">
-          <a href="service-personal-training.html"><i class="fa-solid fa-user"></i> Personal Training</a>
-          <a href="service-strength-training.html"><i class="fa-solid fa-dumbbell"></i> Strength Training</a>
-          <a href="service-hiit.html"><i class="fa-solid fa-bolt"></i> HIIT Sessions</a>
-          <a href="service-nutrition.html"><i class="fa-solid fa-apple-whole"></i> Nutrition Coaching</a>
-        </div>
-      </div>
-      <div class="nav-item has-dropdown">
-        <a href="blog.html" class="nav-parent">Blog</a>
-        <span class="nav-chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        <div class="dropdown dropdown-wide">
-          <a href="blog-article.html"><i class="fa-solid fa-newspaper"></i> How to Build Muscle the Smart Way</a>
-          <a href="blog-article-fat-loss.html"><i class="fa-solid fa-fire"></i> Smart Fat Loss Without Losing Muscle</a>
-          <a href="blog-article-hiit-cardio.html"><i class="fa-solid fa-stopwatch"></i> HIIT vs Traditional Cardio</a>
-          <a href="blog-article-consistency.html"><i class="fa-solid fa-brain"></i> The Psychology of Gym Consistency</a>
-          <a href="blog-article-personal-training.html"><i class="fa-solid fa-trophy"></i> Why Personal Training Accelerates Results</a>
-        </div>
-      </div>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
       <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
+      <a href="admin.html">Dashboard</a>
     </nav>
     <div class="nav-actions">
-      <button id="theme-toggle">ðŸŒ™</button>
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button id="rtl-toggle" aria-label="Switch to RTL" title="Switch to RTL">&#x2B62;</button>
       <a href="signup.html" class="btn-signup">Sign Up</a>
+      <button class="mobile-menu-btn hamburger" id="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
-    <div id="mobile-menu">
+  <div id="mobile-menu">
     <div class="mob-item">
       <a href="#" class="mob-parent">Home <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
       <div class="mob-sub">
@@ -67,38 +56,50 @@
       </div>
     </div>
     <a href="aboutus.html">About</a>
-    <div class="mob-item">
-      <a href="#" class="mob-parent">Services <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
-      <div class="mob-sub">
-        <a href="services.html">All Services</a>
-        <a href="service-personal-training.html">Personal Training</a>
-        <a href="service-strength-training.html">Strength Training</a>
-        <a href="service-hiit.html">HIIT Sessions</a>
-        <a href="service-nutrition.html">Nutrition Coaching</a>
-      </div>
-    </div>
-    <div class="mob-item">
-      <a href="#" class="mob-parent">Blog <i class="fa-solid fa-chevron-down mob-chevron"></i></a>
-      <div class="mob-sub">
-        <a href="blog.html">All Articles</a>
-        <a href="blog-article.html">Build Muscle the Smart Way</a>
-        <a href="blog-article-fat-loss.html">Smart Fat Loss</a>
-        <a href="blog-article-hiit-cardio.html">HIIT vs Cardio</a>
-        <a href="blog-article-consistency.html">Psychology of Consistency</a>
-        <a href="blog-article-personal-training.html">Personal Training Results</a>
-      </div>
-    </div>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
     <a href="pricing.html">Pricing</a>
     <a href="contact.html">Contact</a>
+    <a href="admin.html">Dashboard</a>
+    <div class="mob-signup-wrap">
+      <a href="signup.html" class="btn-signup">Sign Up</a>
+    </div>
   </div>
 </header>
 
 
 <section class="services-hero">
-  <div class="container">
-    <span class="hero-label">What We Offer</span>
-    <h1 class="hero-title">Programs Built<br>For <em>Real Results</em></h1>
-    <p class="hero-sub">Every service at FitCore is engineered around one goal â€” your transformation. From one-on-one coaching to nutrition science, we extend the gym experience into every part of your daily life.</p>
+  <div class="container services-hero-inner">
+    
+    <div class="services-hero-text">
+      <span class="hero-label">What We Offer</span>
+      <h1 class="hero-title">Programs Built<br>For <em>Real Results</em></h1>
+      <p class="hero-sub">Every service at FitCore is engineered around one goal &mdash; your transformation. From one-on-one coaching to nutrition science, we extend the gym experience into every part of your daily life.</p>
+      <div class="hero-pills">
+        <span>Strength</span>
+        <span>HIIT</span>
+        <span>Nutrition</span>
+        <span>Coaching</span>
+      </div>
+    </div>
+    
+    <div class="services-hero-media">
+      <div class="hero-img-main">
+        <img src="../images/service-hero1.jpg" alt="Personal Training">
+      </div>
+      <div class="hero-img-stack">
+        <div class="hero-img-sm">
+          <img src="../images/service-hero.jpg" alt="Strength Training">
+        </div>
+        <div class="hero-img-sm">
+          <img src="../images/service-hero3.jpg" alt="HIIT Sessions">
+        </div>
+      </div>
+      <div class="hero-media-badge">
+        <span class="badge-num">4</span>
+        <span class="badge-label">Elite<br>Programs</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -134,7 +135,7 @@
     <div class="service-row reverse">
       <div class="service-number">02</div>
       <div class="service-img-wrap">
-        <img src="../images/service2.jpg" alt="Strength Training">
+        <img src="../images/112.jpg" alt="Strength Training">
       </div>
       <div class="service-info">
         <span class="service-tag">Strength</span>
@@ -156,7 +157,7 @@
     <div class="service-row">
       <div class="service-number">03</div>
       <div class="service-img-wrap">
-        <img src="../images/service3.jpg" alt="HIIT Sessions">
+        <img src="../images/111.jpg" alt="HIIT Sessions">
       </div>
       <div class="service-info">
         <span class="service-tag">Cardio</span>
