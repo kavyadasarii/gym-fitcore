@@ -287,10 +287,14 @@
 .mv-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
+ border-radius: 10px;
   padding: 40px 36px;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   transition: transform .35s cubic-bezier(.22,.61,.36,1),
               box-shadow .35s ease,
               border-color .35s ease;
@@ -320,7 +324,16 @@
 }
 .mv-card:hover h3 { color: var(--accent); }
 .mv-card p { color: var(--text-muted); line-height: 1.75; font-size: .95rem; }
+.trainer-info {
+  padding: 18px 20px 22px;
+  text-align: center;
+}
 
+.trainer-info h3,
+.trainer-role,
+.trainer-tag {
+  text-align: center;
+}
 .our-team { padding: 100px 0; overflow: hidden; }
 .team-header { text-align: center; margin-bottom: 60px; }
 .team-header h2 {
@@ -437,13 +450,20 @@
   font-size: .7rem;
   color: var(--text-muted);
 }
-
 .testimonials {
+  position: relative;
   padding: 100px 0;
-  background: var(--bg-alt);
+  color: #fff;
   border-top: 1px solid var(--border);
+  background:
+    linear-gradient(
+      rgba(10,10,9,.85),
+      rgba(10,10,9,.85)
+    ),
+    url('../images/gym-bg.jpg') center/cover no-repeat;
 }
-.testimonials-header { text-align: center; margin-bottom: 56px; }
+
+.testimonials-header { color: #fff; text-align: center; margin-bottom: 56px; }
 .testimonials-header h2 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2.4rem, 5vw, 3.8rem);
@@ -556,9 +576,24 @@
   padding: 36px 28px;
   position: relative;
   overflow: hidden;
-  transition: transform .35s cubic-bezier(.22,.61,.36,1),
-              box-shadow .35s ease,
-              border-color .35s ease;
+  text-align: center;       
+  display: flex;           
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-user h4 {
+    color: var(--text) !important;
+    font-weight: 300 !important;
+}
+
+.testimonial-user span {
+    color: var(--text-muted) !important;
+}
+
+.testimonial-card {
+    color: var(--text);
 }
 
 .feature-box::after {
@@ -595,6 +630,19 @@
 .feature-box:hover h4 { color: var(--accent); }
 .feature-box p { font-size: .84rem; color: var(--text-muted); line-height: 1.65; }
 
+p,
+span,
+a,
+li,
+button,
+input,
+textarea {
+    font-weight: 400 !important;
+}
+h1, h2, h3, h4, h5, h6,
+p, span, a, li, button {
+    font-weight: 400 !important;
+}
 
 @media (max-width: 1024px) {
   .team-grid      { grid-template-columns: repeat(2, 1fr); }

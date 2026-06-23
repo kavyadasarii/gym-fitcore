@@ -349,20 +349,35 @@ footer {
 
 .footer-info{
     display:flex;
-    gap:40px;
+    gap:20px;
     font-size:13px;
     color: var(--text-muted);
 }
 
-.footer-bottom{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:13px;
-    color: var(--text-muted);
-    
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 30px;
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
 }
 
+.footer-bottom-left {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-left span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
 .footer-links a{
     margin-left:20px;
     text-decoration:none;

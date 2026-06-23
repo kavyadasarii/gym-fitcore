@@ -157,6 +157,20 @@
 }
 .related-post span { font-size: .82rem; color: var(--text-muted); line-height: 1.5; }
 
+.footer-logo,
+.footer-brand,
+.footer-brand a,
+.footer-logo a {
+    color: #111 !important;
+}
+
+[data-theme="dark"] .footer-logo,
+[data-theme="dark"] .footer-brand,
+[data-theme="dark"] .footer-brand a,
+[data-theme="dark"] .footer-logo a {
+    color: #fff !important;
+}
+
 @media (max-width: 900px) {
   .article-layout { grid-template-columns: 1fr; }
   .article-sidebar { position: static; }

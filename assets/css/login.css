@@ -19,6 +19,19 @@ html.dark {
   --text-muted: #857f78;
   --left-bg:    #0d0c0c;
 }
+p,
+span,
+a,
+li,
+button,
+input,
+textarea {
+    font-weight: 400 !important;
+}
+h1, h2, h3, h4, h5, h6,
+p, span, a, li, button {
+    font-weight: 400 !important;
+}
 
 html, body {
   height: 100%;
